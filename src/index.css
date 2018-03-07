@@ -18,12 +18,6 @@
     url("./fonts/Avenir-Light.ttf") format("truetype");
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
 .TopImage {
   height: 505px;
   align-items: flex-start;
@@ -45,7 +39,7 @@ body {
   top: 259px;
   width: 100%;
   color: white;
-  height: 200px;
+  height: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -54,11 +48,9 @@ body {
   margin-top: 0px;
   width: 588px;
   color: white;
+  text-align: center;
   font-size: 50px;
   height: 130px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   font-family: LatoFont;
 }
 
@@ -102,6 +94,7 @@ body {
   height: 133px;
   filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
+
 .LogoContainer {
   height: 70px;
   width: 100%;
@@ -114,7 +107,7 @@ body {
   filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
 }
 
-.ContainerTest {
+.SubContainer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,4 +124,58 @@ body {
   margin-top: 0px;
   font-family: AvenirLight;
   font-size: 17px;
+}
+
+.SeparatorHorizontal {
+  width: 0px;
+  height: 1px;
+  background-color: #80979797;
+}
+.BottomContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Mobile */
+
+@media screen and (max-width: 375px) {
+  .LogoContainer {
+    justify-content: center;
+  }
+  .TitleText {
+    width: 289px;
+    font-size: 36px;
+  }
+  .TopImage {
+    width: auto;
+    margin-left: -200px;
+  }
+  .ImgBrain {
+    width: 0px;
+  }
+  .ImgShield {
+    width: 0px;
+  }
+  .SubContainer {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .FirstText {
+    text-align: justify;
+    margin-left: 66px;
+    width: 240px;
+  }
+  .SecondText {
+    text-align: justify;
+    margin-right: 66px;
+    width: 240px;
+  }
+  .Separator {
+    width: 0px;
+  }
+  .SeparatorHorizontal {
+    width: 211px;
+    align-self: center;
+  }
 }

@@ -3,38 +3,51 @@ import logo from "./assets/mylo-logo.png";
 import topBG from "./assets/top-bg.jpg";
 import ImageBrain from "./assets/brain.svg";
 import ImageShield from "./assets/shield.svg";
-import styled from "styled-components";
+import { ContentContainer } from "./ContentContainer";
 
 import "./App.css";
 import "./index.css";
 
-class ContentContainer extends Component {
-  render() {
-    return (
-      <div className="TextImageContainer">
-        <div className="ContainerTest">{this.props.leftContent}</div>
-        <div className="Separator" />
-        <div className="ContainerTest">{this.props.rightContent}</div>
-      </div>
-    );
-  }
-}
-
 class App extends Component {
-  createFirstText = () => {
+  constructor(props) {
+    super(props);
+    this.state = { width: window.screen.width };
+  }
+  componentWillMount() {
+    window.addEventListener("resize", this.handleWindowSizeChange);
+  }
+
+  // make sure to remove the listener
+  // when the component is not mounted anymore
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.screen.width });
+  };
+
+  createFirstText = shouldRenderFullText => {
+    var extraText = "";
+    if (shouldRenderFullText) {
+      extraText = "Plug in, sit back and relax. It’s time to download Mylo.";
+    }
     return (
       <div className="FirstText">
         <div className="TextTitle">Achieve more. Live more.</div>
         <p className="TextContent">
           Mylo AI provides personalized insights so you can make better
-          financial decisions. Plug in, sit back and relax. It’s time to
-          download Mylo.
+          financial decisions. {extraText}
         </p>
       </div>
     );
   };
 
-  createSecondText = () => {
+  createSecondText = shouldRenderFullText => {
+    var extraText = "";
+    if (shouldRenderFullText) {
+      extraText = "Your peace of mind is our priority.";
+    }
     return (
       <div className="SecondText">
         <div className="TextTitle">Security by design</div>
@@ -42,13 +55,15 @@ class App extends Component {
           We've implemented the same security measures as all major Canadian
           banks. We use 256-bit encryption, secure SSL connections and
           bank-level security protocols so that your information is never at
-          risk. Your peace of mind is our priority.
+          risk. {extraText}
         </p>
       </div>
     );
   };
 
   render() {
+    const width = this.state.width != undefined ? this.state.width : 0;
+    const isSmallerDevice = width <= 375;
     return (
       <div className="App">
         <div className="LogoContainer">
@@ -64,17 +79,20 @@ class App extends Component {
           </div>
         </div>
 
-        <div className="TestCont">
-          <ContentContainer
-            leftContent={this.createFirstText()}
-            rightContent={<img className="ImgBrain" src={ImageBrain} />}
-          />
-        </div>
-        <div className="TestCont">
-          <ContentContainer
-            leftContent={<img className="ImgShield" src={ImageShield} />}
-            rightContent={this.createSecondText()}
-          />
+        <div className="BottomContainer">
+          <div className="TestCont">
+            <ContentContainer
+              leftContent={this.createFirstText(!isSmallerDevice)}
+              rightContent={<img className="ImgBrain" src={ImageBrain} />}
+            />
+          </div>
+          <div className="SeparatorHorizontal" />
+          <div className="TestCont">
+            <ContentContainer
+              leftContent={<img className="ImgShield" src={ImageShield} />}
+              rightContent={this.createSecondText(!isSmallerDevice)}
+            />
+          </div>
         </div>
       </div>
     );
