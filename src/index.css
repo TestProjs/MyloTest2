@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "LatoFont";
+  src: url("./fonts/Lato-Heavy.woff2") format("woff2"),
+    url("./fonts/Lato-Heavy.woff") format("woff"),
+    url("./fonts/Lato-Heavy.ttf") format("truetype");
+}
+@font-face {
+  font-family: "AvenirHeavy";
+  src: url("./fonts/Avenir-Heavy.woff2") format("woff2"),
+    url("./fonts/Avenir-Heavy.woff") format("woff"),
+    url("./fonts/Avenir-Heavy.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "AvenirLight";
+  src: url("./fonts/Avenir-Light.woff2") format("woff2"),
+    url("./fonts/Avenir-Light.woff") format("woff"),
+    url("./fonts/Avenir-Light.ttf") format("truetype");
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.TopImage {
+  height: 505px;
+  align-items: flex-start;
+  display: flex;
+  opacity: 0.3;
+  width: 1024px;
+}
+
+.MyloLogo {
+  height: 35px;
+  width: 121px;
+  margin-top: 18px;
+  margin-bottom: 17px;
+  margin-left: 50px;
+}
+
+.TextContainer {
+  position: absolute;
+  top: 259px;
+  width: 100%;
+  color: white;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.TitleText {
+  margin-top: 0px;
+  width: 588px;
+  color: white;
+  font-size: 50px;
+  height: 130px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: LatoFont;
+}
+
+.ImgTopBackground {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  background-color: #d8d8d8;
+  height: 505px;
+  width: 1024px;
+}
+.TextImageContainer {
+  display: flex;
+  width: 100%;
+  height: 205px;
+}
+
+.Separator {
+  height: 100%;
+  width: 1px;
+  background-color: #80979797;
+}
+
+.TestCont {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 420px;
+}
+.FirstText {
+  width: 325.5px;
+  text-align: justify;
+}
+.SecondText {
+  width: 325.5px;
+  text-align: right;
+}
+
+.ImgBrain {
+  width: 120px;
+  height: 133px;
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+.LogoContainer {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.ImgShield {
+  width: 120px;
+  height: 146px;
+  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+.ContainerTest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+}
+
+.TextTitle {
+  font-family: AvenirHeavy;
+  font-size: 17px;
+}
+
+.TextContent {
+  margin-top: 0px;
+  font-family: AvenirLight;
+  font-size: 17px;
+}
