@@ -20,9 +20,18 @@
 
 .TopImage {
   height: 505px;
-  align-items: flex-start;
-  display: flex;
   opacity: 0.3;
+  width: 1024px;
+  margin-left: -8px;
+  margin-top: -8px;
+}
+
+.ImgTopBackground {
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  background-color: #d8d8d8;
+  height: 505px;
   width: 1024px;
 }
 
@@ -54,14 +63,6 @@
   font-family: LatoFont;
 }
 
-.ImgTopBackground {
-  position: absolute;
-  top: 70px;
-  left: 0px;
-  background-color: #d8d8d8;
-  height: 505px;
-  width: 1024px;
-}
 .TextImageContainer {
   display: flex;
   width: 100%;
@@ -74,7 +75,7 @@
   background-color: #80979797;
 }
 
-.TestCont {
+.BottomSubContainer {
   display: flex;
   width: 100%;
   align-items: center;

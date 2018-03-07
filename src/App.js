@@ -5,7 +5,6 @@ import ImageBrain from "./assets/brain.svg";
 import ImageShield from "./assets/shield.svg";
 import { ContentContainer } from "./ContentContainer";
 
-import "./App.css";
 import "./index.css";
 
 class App extends Component {
@@ -65,7 +64,7 @@ class App extends Component {
     const width = this.state.width != undefined ? this.state.width : 0;
     const isSmallerDevice = width <= 375;
     return (
-      <div className="App">
+      <div>
         <div className="LogoContainer">
           <img className="MyloLogo" src={logo} alt="logo" />
         </div>
@@ -80,14 +79,14 @@ class App extends Component {
         </div>
 
         <div className="BottomContainer">
-          <div className="TestCont">
+          <div className="BottomSubContainer">
             <ContentContainer
               leftContent={this.createFirstText(!isSmallerDevice)}
               rightContent={<img className="ImgBrain" src={ImageBrain} />}
             />
           </div>
           <div className="SeparatorHorizontal" />
-          <div className="TestCont">
+          <div className="BottomSubContainer">
             <ContentContainer
               leftContent={<img className="ImgShield" src={ImageShield} />}
               rightContent={this.createSecondText(!isSmallerDevice)}
